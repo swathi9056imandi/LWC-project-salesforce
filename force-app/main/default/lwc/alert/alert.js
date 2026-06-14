@@ -1,6 +1,6 @@
-import { LightningElement, api, wire } from 'lwc';
-import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import FIELD_STATUS from '@salesforce/schema/Harvest_Field__c.Status__c';
+import { getFieldValue, getRecord } from 'lightning/uiRecordApi';
+import { LightningElement, api, wire } from 'lwc';
 
 const fields = [FIELD_STATUS];
 
@@ -20,4 +20,5 @@ export default class Alert extends LightningElement {
     get isWarning() {
         return getFieldValue(this.record.data, FIELD_STATUS) === 'Warning';
     }
+    //
 }
